@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Domaci zadatak";
+}
+<!DOCTYPE html>
+<style>
+    .button {
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #4CAF50;
+    }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #008CBA;
+    }
+
+        .button2:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+
+</style>
+
+
+<html>
+
+<body>
+    <h1>Bookstore - Home page</h1>
+    <hr size='4' width='40%' color='black' align='left'>
+    @Html.ValidationMessage("Error")
+    <form action='/BookStore/Add' method='post'>
+        <table border='1'>
+            <tr>
+                <th colspan='2'>Add new book</th>
+            </tr>
+            <tr style='font-weight:bold'>
+                <td>Name of book:</td>
+                <td><input type='text' id='name' name='name'></td>
+            </tr>
+            <tr>
+                <td>Price of book:</td>
+                <td><input type='text' id='price' name='price'></td>
+            </tr>
+            <tr>
+                <td>Genre of book:</td>
+                <td>
+                    <select name='genre' id='genre'>
+                        <option value="1" selected>Science</option>
+                        <option value="2" >Comedy </option>
+                        <option value="3" >Horror</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2'><input type='submit' value='add' style='float: right;'></td>
+            </tr>
+            <tr style='font-weight:bold'>
+        </table>
+        <a href='/BookStore/ListAll'>Show all books | </a>
+        <a href='/BookStore/DeleteList'>Show deleted books</a>
+
+        <br />
+        <a href='/BookStore/Test'>Show Fansy ListAll</a>
+        <a href='/BookStore/Test1'>Show Fansy DeletedAll</a>
+
+  
+    </form>
+</body>
+</html>

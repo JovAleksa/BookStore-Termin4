@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Domaci zadatak";
+}
+
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            width: 800px;
+            height: auto;
+        }
+
+        .col-25 {
+            float: left;
+            width: 15%;
+            margin-top: 6px;
+            padding:2%;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+     
+        .right {
+    float: left;}
+    </style>
+</head>
+
+<body>
+
+   
+    <div class="container">
+         <h1>Add the book in list</h1>
+        <form action="/BookStore/add" method="post">
+            @Html.AntiForgeryToken()
+
+            <div class="row">
+
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="name" placeholder="Name of the book..">
+                        <p class="text-danger">
+                            @ViewBag.FirstNameError
+                        </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Price</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="price" placeholder="Price of the book..">
+                        <p class="text-danger">
+                            @ViewBag.SecondtNameError
+                        </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="genre">Genre</label>
+                </div>
+                <div class="col-75">
+                    <select id="genre" name="Genre">
+                        <option value="1">Science</option>
+                        <option value="2">Comedy</option>
+                        <option value="3">Horror</option>
+                    </select>
+                </div>
+            </div>
+            <br><br><br>
+            <div class="right">
+                <input type="submit" value="Add">
+            </div>
+            </form>
+        @*<a href='/BookStore/ListAll'>Show all books | </a>
+        <a href='/BookStore/DeleteList'>Show deleted books</a>
+   *@
+
+  
+    </div>
+     
+</body>
+
+</html>
